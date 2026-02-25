@@ -1,6 +1,10 @@
-# RAG Company Report Generator
+# Evidence-backed report generation
 
-A production-grade RAG (Retrieval-Augmented Generation) pipeline built with LangChain/LangGraph for retrieving company data from a vector database and generating comprehensive reports.
+## Follow evidence into the report
+
+[The ingestion pipeline](src/data_ingestion/ingestion_pipeline.py) prepares source material, [the agent graph](src/agent/graph.py) coordinates retrieval and drafting, and [the report writer](src/report_writer.py) turns the result into an artifact. Cost tracking and API tests are separate, inspectable parts of the repository.
+
+A useful demonstration includes the source evidence for a claim, a missing-evidence case, and a failed-provider response. Retrieved context is not an accuracy guarantee; evaluate citation support and completeness using a defined collection of reports before advertising quality metrics.
 
 ## 🏗️ Architecture
 
@@ -363,6 +367,3 @@ docker-compose down
 docker-compose build --no-cache
 docker-compose up
 ```
-
-
-
